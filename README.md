@@ -15,6 +15,7 @@ $ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbunt
 
 ### Demonstration
 
+- [Hello World application to test] (https://github.com/edgarrc/MonoUbuntu/releases/download/hello/hello.zip)
 - [Video1](https://youtu.be/BYcYkIySFUk)
 
 ### Contributing
