@@ -53,7 +53,7 @@ read d
 echo ""
 echo "##INF:[01/06] Installing apache"
 
-	apt-get -y update
+	#apt-get -y update
 	apt-get -y install wget
 	apt-get -y install apache2
 
