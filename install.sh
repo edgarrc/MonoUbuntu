@@ -10,7 +10,7 @@
 
 #Helper function to ask for continue or skipt
 askcs ()  {
-  echo  -n " - Continue or skip? (c/s) [c]:"
+  echo  -n " - (Y)es or (N)o? (y/n) :"
   read resp
 
   while [ "1" = "1" ]
@@ -21,10 +21,10 @@ askcs ()  {
       break
     else
       case $resp in
-        y | Y | c | C) 
+        y | Y ) 
            resp="y";
            break;;
-        s | S ) 
+        n | N ) 
 		   resp="n";
 	       break;;
         *)
@@ -61,12 +61,11 @@ echo "##INF:[01/06] Installing apache"
 
 echo ""
 echo "##INF:[02/06] Installing PHP"
-echo "##INF: If you plan to use PHP, it is advisable"
-echo "##INF: to install now."
+echo "##INF: If you plan to use PHP, it is advisable to install now"
 echo -n "##INF: Do you want to install PHP as well? "
 askcs;
 	if [ "$resp" = 'y' ]; then
-		apt-get install php5 libapache2-mod-php5 php5-mcrypt
+		apt-get -y install php5 libapache2-mod-php5 php5-mcrypt
 		#acrescentar "index.php" no apache
 		##vi /etc/apache2/mods-enabled/dir.conf	
 	fi
