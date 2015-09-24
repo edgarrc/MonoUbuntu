@@ -10,7 +10,7 @@
 
 #Helper function to ask for continue or skipt
 askcs ()  {
-  echo  -n " - (Y)es or (N)o? (y/n) :"
+  echo  -n " - Yes or No? (y/n) :"
   read resp
 
   while [ "1" = "1" ]
