@@ -15,7 +15,7 @@ $ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbunt
 
 ### Demonstration
 
-[Video1](https://youtu.be/BYcYkIySFUk)
+- [Video1](https://youtu.be/BYcYkIySFUk)
 
 ### Contributing
 
