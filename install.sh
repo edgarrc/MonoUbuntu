@@ -8,12 +8,9 @@
 # Edgar
 ######################################################
 
-#Collor definition
-NORM="\033[0m"; AMARELO="\033[1;33m"; AZUL="\033[1;34m"; VERMELHO="\033[1;31m"; VERDE="\033[1;32m";
-
 #Helper function to ask for continue or skipt
 askcs ()  {
-  echo  -n "${VERDE} - Continue or skip?${NORM} (c/s) [c]:"
+  echo  -n " - Continue or skip? (c/s) [c]:"
   read resp
 
   while [ "1" = "1" ]
@@ -42,22 +39,22 @@ askcs ()  {
 #----- STEP 0
 
 echo ""
-echo "${AZUL}##INF: ----------------------------------------------${NORM}"
-echo "${AZUL}##INF: Mono/apache - Ubuntu install${NORM}"
-echo "${AZUL}##INF:${NORM}"
-echo "${AZUL}##INF: Do not continue if mono or apache is already installed${NORM}"
-echo "${AZUL}##INF:${NORM}"
-echo "${AZUL}##INF: Execute with sudo${NORM}"
-echo "${AZUL}##INF: if you are not executing with sudo exit now (ctrl+c)${NORM}"
-echo "${AZUL}##INF: and type${NORM}"
-echo "${AZUL}##INF:   ./sudo install.sh${NORM}"
-echo "${AZUL}##INF:${NORM}"
-echo -n "${AZUL}##INF: PRESS ENTER TO PROCEED <ENTER>${NORM}"
+echo "##INF: ----------------------------------------------"
+echo "##INF: Mono/apache - Ubuntu install"
+echo "##INF:"
+echo "##INF: Do not continue if mono or apache is already installed"
+echo "##INF:"
+echo "##INF: Execute with sudo"
+echo "##INF: if you are not executing with sudo exit now (ctrl+c)"
+echo "##INF: and type"
+echo "##INF:   ./sudo install.sh"
+echo "##INF:"
+echo -n "##INF: PRESS ENTER TO PROCEED <ENTER>"
 read d
 
 #----- STEP 1
 
-echo -n "${AZUL}##INF:[01/06] Installing apache${NORM}"
+echo -n "##INF:[01/06] Installing apache"
 
 	apt-get -y update
 	apt-get -y install wget
@@ -65,10 +62,10 @@ echo -n "${AZUL}##INF:[01/06] Installing apache${NORM}"
 
 #----- STEP 2
 
-echo -n "${AZUL}##INF:[02/06] Installing PHP${NORM}"
-echo -n "${AZUL}##INF: If you plan to use PHP, it is advisable${NORM}"
-echo -n "${AZUL}##INF: to install now.${NORM}"
-echo -n "${AZUL}##INF: Do you want to install PHP as well? ${NORM}"
+echo -n "##INF:[02/06] Installing PHP"
+echo -n "##INF: If you plan to use PHP, it is advisable"
+echo -n "##INF: to install now."
+echo -n "##INF: Do you want to install PHP as well? "
 askcs;
 	if [ "$resp" = 'y' ]; then
 		apt-get install php5 libapache2-mod-php5 php5-mcrypt
@@ -78,7 +75,7 @@ askcs;
 
 #----- STEP 3
 
-echo -n "${AZUL}##INF:[03/06] Installing MONO/Mod-mono${NORM}"
+echo -n "##INF:[03/06] Installing MONO/Mod-mono"
 
 	#Add the last oficial repository
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
@@ -97,9 +94,9 @@ echo -n "${AZUL}##INF:[03/06] Installing MONO/Mod-mono${NORM}"
 
 #----- STEP 4
 
-echo -n "${AZUL}##INF:[04/06] Configuring ASP.NET application${NORM}"
+echo -n "##INF:[04/06] Configuring ASP.NET application"
 
-echo -n "${AZUL} What is the name of your asp.net application? ${NORM} "
+echo -n " What is the name of your asp.net application?  "
 read appnameInput
 
 	#Get some templates used for replacement on config files
@@ -126,14 +123,14 @@ read appnameInput
 
 #----- STEP 5
 
-echo -n "${AZUL}##INF:[05/06] Execute asp.net command as root?${NORM}"
-echo -n "${AZUL}##INF: Sometimes (crazy) developers build asp.net applications${NORM}"
-echo -n "${AZUL}##INF: to execute code as a root, IE: to restart a database${NORM}"
-echo -n "${AZUL}##INF: You need special privileges configured${NORM}"
-echo -n "${AZUL}##INF: on Linux to allow this to work. ${NORM}"
-echo -n "${AZUL}##INF: If you are not absolutely sure (it is not an advisable thing to do)${NORM}"
-echo -n "${AZUL}##INF: skip this step ${NORM}"
-echo -n "${AZUL}##INF: Do you want to enable this? (please say skip...) ${NORM}"
+echo -n "##INF:[05/06] Execute asp.net command as root?"
+echo -n "##INF: Sometimes (crazy) developers build asp.net applications"
+echo -n "##INF: to execute code as a root, IE: to restart a database"
+echo -n "##INF: You need special privileges configured"
+echo -n "##INF: on Linux to allow this to work. "
+echo -n "##INF: If you are not absolutely sure (it is not an advisable thing to do)"
+echo -n "##INF: skip this step "
+echo -n "##INF: Do you want to enable this? (please say skip...) "
 askcs;
 	if [ "$resp" = 'y' ]; then
 		echo "ALL ALL=(ALL) NOPASSWD:ALL" >> "/etc/sudoers"
@@ -141,16 +138,16 @@ askcs;
  
  #----- STEP 5
  
-echo -n "${AZUL}##INF:[06/06] Installing ORACLE LIBARY${NORM}"
-echo -n "${AZUL}##INF: Install you intend to use oracle with your ASP.NET${NORM}"
-echo -n "${AZUL}##INF: application.${NORM}"
-echo -n "${AZUL}##INF: Do you want to install Oracle Client? ${NORM}"
+echo -n "##INF:[06/06] Installing ORACLE LIBARY"
+echo -n "##INF: Install you intend to use oracle with your ASP.NET"
+echo -n "##INF: application."
+echo -n "##INF: Do you want to install Oracle Client? "
 askcs;
 	if [ "$resp" = 'y' ]; then
-		echo "${AZUL}##INF: Sorry, this step is not implemented yet ${NORM}"
-		echo "${AZUL}##INF: if it is really necessary please let me know"
-		echo "${AZUL}##INF: by sending an email to: edgarrc (at) gmail . com"
-		echo "${AZUL}##INF: or use the issues tool: https://github.com/edgarrc/MonoUbuntu"
+		echo "##INF: Sorry, this step is not implemented yet "
+		echo "##INF: if it is really necessary please let me know"
+		echo "##INF: by sending an email to: edgarrc (at) gmail . com"
+		echo "##INF: or use the issues tool: https://github.com/edgarrc/MonoUbuntu"
 	fi 
  
 #----- STEP 6
@@ -159,18 +156,16 @@ askcs;
 	if [ "$IP" = "" ]; then IP="127.0.0.1"; fi
 	
 echo ""
-echo "${AZUL}##INF: Installation completed!${NORM}"
-echo "${AZUL}##INF:${NORM}"
-echo "${AZUL}##INF: Publish your application to:${NORM}"
-echo "${AZUL}##INF: ${AMARELO}/var/www/html/$appnameInput ${NORM}"
-echo "${AZUL}##INF:${NORM}"
-echo "${AZUL}##INF: Application address:${NORM}"
-echo "${AZUL}##INF:${NORM}"
-echo "${AZUL}##INF: ${AMARELO}http://$IP/$appnameInput ${NORM}"
-echo "${AZUL}##INF:${NORM}"
-echo "${AZUL}##INF: Obs: If you have any error, try to restart apache again:${NORM}"
-echo "${AZUL}##INF: ${AMARELO}/etc/init.d/apache2 restart ${NORM}"
-echo "${AZUL}##INF:${NORM}"
+echo "##INF: Installation completed!"
+echo "##INF:"
+echo "##INF: Publish your application to:"
+echo "##INF:   /var/www/html/$appnameInput "
+echo "##INF:"
+echo "##INF: Application address:"
+echo "##INF:"
+echo "##INF:   http://$IP/$appnameInput "
+echo "##INF:"
+echo "##INF: Obs: If you have any error, try to restart apache again:"
+echo "##INF: /etc/init.d/apache2 restart "
+echo "##INF:"
 echo ""
- 
-rm install.sh
