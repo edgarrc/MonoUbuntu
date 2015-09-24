@@ -51,7 +51,7 @@ read d
 #----- STEP 1
 
 echo ""
-echo "##INF:[01/05] Installing apache"
+echo "##INF:[01/04] Installing apache"
 
 	apt-get -y update
 	apt-get -y install wget
@@ -60,7 +60,7 @@ echo "##INF:[01/05] Installing apache"
 #----- STEP 2
 
 echo ""
-echo "##INF:[02/05] Installing PHP"
+echo "##INF:[02/04] Installing PHP"
 echo "##INF: If you plan to use PHP, it is advisable to install now"
 echo -n "##INF: Do you want to install PHP as well? "
 askcs;
@@ -73,7 +73,7 @@ askcs;
 #----- STEP 3
 
 echo ""
-echo "##INF:[03/05] Installing MONO/Mod-mono"
+echo "##INF:[03/04] Installing MONO/Mod-mono"
 
 	#Add the last oficial repository
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
@@ -92,7 +92,7 @@ echo "##INF:[03/05] Installing MONO/Mod-mono"
 
 #----- STEP 4
 echo ""
-echo "##INF:[04/06] Configuring ASP.NET application"
+echo "##INF:[04/04] Configuring ASP.NET application"
 echo -n " Enter the name of your ASP.NET application : "
 read appnameInput
 
@@ -120,19 +120,19 @@ read appnameInput
 
 #----- STEP 5
 
-echo ""
-echo "##INF:[05/05] Execute asp.net command as root?"
-echo "##INF: Sometimes (crazy) developers build asp.net applications"
-echo "##INF: to execute code as a root, IE: to restart a database"
-echo "##INF: You need special privileges configured"
-echo "##INF: on Linux to allow this to work. "
-echo "##INF: If you are not absolutely sure (it is not an advisable thing to do)"
-echo "##INF: skip this step "
-echo -n "##INF: Do you want to enable this? (please, say no...) "
-askcs;
-	if [ "$resp" = 'y' ]; then
-		echo "ALL ALL=(ALL) NOPASSWD:ALL" >> "/etc/sudoers"
-	fi
+#echo ""
+#echo "##INF:[05/05] Execute asp.net command as root?"
+#echo "##INF: Sometimes (crazy) developers build asp.net applications"
+#echo "##INF: to execute code as a root, IE: to restart a database"
+#echo "##INF: You need special privileges configured"
+#echo "##INF: on Linux to allow this to work. "
+#echo "##INF: If you are not absolutely sure (it is not an advisable thing to do)"
+#echo "##INF: skip this step "
+#echo -n "##INF: Do you want to enable this? (please, say no...) "
+#askcs;
+#	if [ "$resp" = 'y' ]; then
+#		echo "ALL ALL=(ALL) NOPASSWD:ALL" >> "/etc/sudoers"
+#	fi
  
 #----- STEP 6
 
