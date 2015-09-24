@@ -20,5 +20,5 @@ Fell free to Fork and PR or create any request with issues tool
 
 ### Release History
 
-1.0.0 - TEST OK 24 set 2015
+1.0 - TEST OK 24 set 2015
 
