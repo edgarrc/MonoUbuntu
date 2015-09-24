@@ -10,7 +10,7 @@ A simple script to install Mono / Apache-mod-mono (and other related stuff) on a
 ### Usage
 
 ```shell
-$ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbuntu/master/install.sh)$ 
+$ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbuntu/master/install.sh)$ "
 ```
 
 ### Contributing
