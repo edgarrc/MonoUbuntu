@@ -5,11 +5,11 @@ A simple script to install Mono / Apache-mod-mono (and other related stuff) on a
 
 ### Know issues
 
-1 - Do not attemp to execute if you already have apache installed
+- Do not attemp to execute if you already have apache installed as it may corrupt your installation. This script is tested only on a clean/minimal installation of Ubuntu (the default option for most cloud servers).
 
 ### Usage
 
-After a clean/minimal installation of Linux Ubuntu, execute:
+, execute:
 
 ```shell
 $ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbuntu/master/install.sh)$ 
