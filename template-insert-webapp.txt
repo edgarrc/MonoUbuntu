@@ -1,8 +1,7 @@
-<apps>
+
         <web-application>
                 <name>%APPNAME%</name>
                 <vpath>/%APPNAME%</vpath>
                 <path>/var/www/html/%APPNAME%</path>
                 <vhost>default</vhost>
         </web-application>
-</apps>
