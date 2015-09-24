@@ -59,9 +59,9 @@ read d
 
 echo -n "${AZUL}##INF:[01/06] Installing apache${NORM}"
 
-	apt-get update
-	apt-get install wget
-	apt-get install apache2
+	apt-get -y update
+	apt-get -y install wget
+	apt-get -y install apache2
 
 #----- STEP 2
 
@@ -86,16 +86,18 @@ echo -n "${AZUL}##INF:[03/06] Installing MONO/Mod-mono${NORM}"
 	echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
 
 	apt-get update
-	apt-get install mono-runtime
-	apt-get install libapache2-mod-mono
-	apt-get install mono-apache-server2
+	apt-get -y install mono-runtime
+	apt-get -y install libapache2-mod-mono
+	apt-get -y install mono-apache-server2
 
 	#Disable apache KeepAlive as recomended by mono-project for production use
 	find /etc/apache2/ -name apache2.conf -type f -exec sed -i s/"KeepAlive On"/"KeepAlive Off"/g {} \;
+	
+	/etc/init.d/apache2 restart
 
 #----- STEP 4
 
-echo -n "${AZUL}##INF:[04/06] Configuring asp.net application${NORM}"
+echo -n "${AZUL}##INF:[04/06] Configuring ASP.NET application${NORM}"
 
 echo -n "${AZUL} What is the name of your asp.net application? ${NORM} "
 read appnameInput
@@ -109,7 +111,7 @@ read appnameInput
 	find ./ -name template-insert-webapp.txt -type f -exec sed -i s/"%APPNAME%"/"$appnameInput"/g {} \;
 	
 	#Apply to apache default website configuration
-	sed -i '/<VirtualHost *:80>/r template-insert-sites.txt' /etc/apache2/sites-enabled/000-default.conf	
+	sed -i '/<VirtualHost/r template-insert-sites.txt' /etc/apache2/sites-enabled/000-default.conf
 
 	#Apply to default.webapp	
 	sed -i '/<apps>/r template-insert-webapp.txt' /etc/mono-server4/default.webapp
