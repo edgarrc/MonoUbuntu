@@ -50,6 +50,7 @@ read d
 
 #----- STEP 1
 
+echo ""
 echo "##INF:[01/06] Installing apache"
 
 	apt-get -y update
@@ -58,6 +59,7 @@ echo "##INF:[01/06] Installing apache"
 
 #----- STEP 2
 
+echo ""
 echo "##INF:[02/06] Installing PHP"
 echo "##INF: If you plan to use PHP, it is advisable"
 echo "##INF: to install now."
@@ -71,7 +73,8 @@ askcs;
 
 #----- STEP 3
 
-echo -n "##INF:[03/06] Installing MONO/Mod-mono"
+echo ""
+echo "##INF:[03/06] Installing MONO/Mod-mono"
 
 	#Add the last oficial repository
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
@@ -90,9 +93,8 @@ echo -n "##INF:[03/06] Installing MONO/Mod-mono"
 
 #----- STEP 4
 
-echo -n "##INF:[04/06] Configuring ASP.NET application"
-
-echo -n " What is the name of your asp.net application?  "
+echo "##INF:[04/06] Configuring ASP.NET application"
+echo "What is the name of your asp.net application? : "
 read appnameInput
 
 	#Get some templates used for replacement on config files
@@ -119,14 +121,15 @@ read appnameInput
 
 #----- STEP 5
 
-echo -n "##INF:[05/06] Execute asp.net command as root?"
-echo -n "##INF: Sometimes (crazy) developers build asp.net applications"
-echo -n "##INF: to execute code as a root, IE: to restart a database"
-echo -n "##INF: You need special privileges configured"
-echo -n "##INF: on Linux to allow this to work. "
-echo -n "##INF: If you are not absolutely sure (it is not an advisable thing to do)"
-echo -n "##INF: skip this step "
-echo -n "##INF: Do you want to enable this? (please say skip...) "
+echo ""
+echo "##INF:[05/06] Execute asp.net command as root?"
+echo "##INF: Sometimes (crazy) developers build asp.net applications"
+echo "##INF: to execute code as a root, IE: to restart a database"
+echo "##INF: You need special privileges configured"
+echo "##INF: on Linux to allow this to work. "
+echo "##INF: If you are not absolutely sure (it is not an advisable thing to do)"
+echo "##INF: skip this step "
+echo "##INF: Do you want to enable this? (please say skip...) "
 askcs;
 	if [ "$resp" = 'y' ]; then
 		echo "ALL ALL=(ALL) NOPASSWD:ALL" >> "/etc/sudoers"
@@ -134,10 +137,11 @@ askcs;
  
  #----- STEP 5
  
-echo -n "##INF:[06/06] Installing ORACLE LIBARY"
-echo -n "##INF: Install you intend to use oracle with your ASP.NET"
-echo -n "##INF: application."
-echo -n "##INF: Do you want to install Oracle Client? "
+echo ""
+echo "##INF:[06/06] Installing ORACLE LIBARY"
+echo "##INF: Install you intend to use oracle with your ASP.NET"
+echo "##INF: application."
+echo "##INF: Do you want to install Oracle Client? "
 askcs;
 	if [ "$resp" = 'y' ]; then
 		echo "##INF: Sorry, this step is not implemented yet "
