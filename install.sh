@@ -83,8 +83,10 @@ echo "##INF:[02/03] Installing MONO/Mod-mono"
 #----- STEP 3
 echo ""
 echo "##INF:[03/03] Configuring ASP.NET application"
-echo -n " Enter the name of your ASP.NET application : "
-read appnameInput
+
+	#Ask of application name
+	echo -n " Enter the name of your ASP.NET application : "
+	read appnameInput
 
 	#Get some templates used for replacement on config files
 	wget https://raw.githubusercontent.com/edgarrc/MonoUbuntu/master/template-insert-sites.txt
