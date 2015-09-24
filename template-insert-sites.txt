@@ -1,0 +1,10 @@
+			 Alias %APPNAME% "/var/www/html/%APPNAME%"
+			 MonoServerPath %APPNAME% "/usr/bin/mod-mono-server4"
+			 MonoApplications %APPNAME% "/%APPNAME%:/var/www/html/%APPNAME%"
+			 <Location "/%APPNAME%">
+			   Allow from all
+			   Order allow,deny
+			   MonoSetServerAlias %APPNAME%
+			   SetHandler mono
+			   DirectoryIndex Default.aspx index.aspx index.html
+			 </Location>
