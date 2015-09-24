@@ -51,7 +51,7 @@ read d
 #----- STEP 1
 
 echo ""
-echo "##INF:[01/06] Installing apache"
+echo "##INF:[01/05] Installing apache"
 
 	#apt-get -y update
 	apt-get -y install wget
@@ -60,7 +60,7 @@ echo "##INF:[01/06] Installing apache"
 #----- STEP 2
 
 echo ""
-echo "##INF:[02/06] Installing PHP"
+echo "##INF:[02/05] Installing PHP"
 echo "##INF: If you plan to use PHP, it is advisable to install now"
 echo -n "##INF: Do you want to install PHP as well? "
 askcs;
@@ -73,7 +73,7 @@ askcs;
 #----- STEP 3
 
 echo ""
-echo "##INF:[03/06] Installing MONO/Mod-mono"
+echo "##INF:[03/05] Installing MONO/Mod-mono"
 
 	#Add the last oficial repository
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
@@ -91,9 +91,9 @@ echo "##INF:[03/06] Installing MONO/Mod-mono"
 	/etc/init.d/apache2 restart
 
 #----- STEP 4
-
+echo ""
 echo "##INF:[04/06] Configuring ASP.NET application"
-echo "What is the name of your asp.net application? : "
+echo -n " Enter the name of your ASP.NET application : "
 read appnameInput
 
 	#Get some templates used for replacement on config files
@@ -121,38 +121,25 @@ read appnameInput
 #----- STEP 5
 
 echo ""
-echo "##INF:[05/06] Execute asp.net command as root?"
+echo "##INF:[05/05] Execute asp.net command as root?"
 echo "##INF: Sometimes (crazy) developers build asp.net applications"
 echo "##INF: to execute code as a root, IE: to restart a database"
 echo "##INF: You need special privileges configured"
 echo "##INF: on Linux to allow this to work. "
 echo "##INF: If you are not absolutely sure (it is not an advisable thing to do)"
 echo "##INF: skip this step "
-echo "##INF: Do you want to enable this? (please say skip...) "
+echo -n "##INF: Do you want to enable this? (please, say no...) "
 askcs;
 	if [ "$resp" = 'y' ]; then
 		echo "ALL ALL=(ALL) NOPASSWD:ALL" >> "/etc/sudoers"
 	fi
  
- #----- STEP 5
- 
-echo ""
-echo "##INF:[06/06] Installing ORACLE LIBARY"
-echo "##INF: Install you intend to use oracle with your ASP.NET"
-echo "##INF: application."
-echo "##INF: Do you want to install Oracle Client? "
-askcs;
-	if [ "$resp" = 'y' ]; then
-		echo "##INF: Sorry, this step is not implemented yet "
-		echo "##INF: if it is really necessary please let me know"
-		echo "##INF: by sending an email to: edgarrc (at) gmail . com"
-		echo "##INF: or use the issues tool: https://github.com/edgarrc/MonoUbuntu"
-	fi 
- 
-#----- STEP 6
- 
+#----- STEP 5
+
 	IP=`ifconfig  | grep 'inet end.:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`;	
 	if [ "$IP" = "" ]; then IP="127.0.0.1"; fi
+
+	/etc/init.d/apache2 restart
 	
 echo ""
 echo "##INF: Installation completed!"
