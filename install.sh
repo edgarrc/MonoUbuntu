@@ -4,7 +4,11 @@
 #
 # For more information about issues, make suggestions, changes
 # bugs etc, please refer to: https://github.com/edgarrc/MonoUbuntu
-# https://dl.dropboxusercontent.com/u/20792650/hello.zip
+#
+# You can download a Hello World application to test your installation from:
+#
+# https://github.com/edgarrc/MonoUbuntu/releases/download/hello/hello.zip
+#
 # Edgar
 ######################################################
 
@@ -123,7 +127,9 @@ echo "##INF: Application address:"
 echo "##INF:"
 echo "##INF:   http://$IP/$appnameInput "
 echo "##INF:"
-echo "##INF: Obs: If you have any error, try to restart apache again:"
+echo "##INF: Note1: If you have any error, try to restart apache again:"
 echo "##INF: /etc/init.d/apache2 restart "
 echo "##INF:"
+echo "##INF: Note2: You can download a Hello World application to test your installation from:"
+echo "##INF: https://github.com/edgarrc/MonoUbuntu/releases/download/hello/hello.zip "
 echo ""
