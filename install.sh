@@ -42,19 +42,15 @@ echo ""
 echo "##INF: ----------------------------------------------"
 echo "##INF: Mono/apache - Ubuntu install"
 echo "##INF:"
-echo "##INF: Do not continue if mono or apache is already installed"
-echo "##INF:"
-echo "##INF: Execute with sudo"
-echo "##INF: if you are not executing with sudo exit now (ctrl+c)"
-echo "##INF: and type"
-echo "##INF:   ./sudo install.sh"
+echo "##INF: - Do not continue if mono or apache is already installed"
+echo "##INF: - Must be executed as root (sudo)"
 echo "##INF:"
 echo -n "##INF: PRESS ENTER TO PROCEED <ENTER>"
 read d
 
 #----- STEP 1
 
-echo -n "##INF:[01/06] Installing apache"
+echo "##INF:[01/06] Installing apache"
 
 	apt-get -y update
 	apt-get -y install wget
@@ -62,9 +58,9 @@ echo -n "##INF:[01/06] Installing apache"
 
 #----- STEP 2
 
-echo -n "##INF:[02/06] Installing PHP"
-echo -n "##INF: If you plan to use PHP, it is advisable"
-echo -n "##INF: to install now."
+echo "##INF:[02/06] Installing PHP"
+echo "##INF: If you plan to use PHP, it is advisable"
+echo "##INF: to install now."
 echo -n "##INF: Do you want to install PHP as well? "
 askcs;
 	if [ "$resp" = 'y' ]; then
