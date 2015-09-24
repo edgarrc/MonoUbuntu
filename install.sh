@@ -8,7 +8,7 @@
 # Edgar
 ######################################################
 
-#Helper function to ask for continue or skipt
+#Helper function to ask for confirmation
 askcs ()  {
   echo  -n " - Yes or No? (y/n) :"
   read resp
@@ -53,7 +53,7 @@ read d
 echo ""
 echo "##INF:[01/05] Installing apache"
 
-	#apt-get -y update
+	apt-get -y update
 	apt-get -y install wget
 	apt-get -y install apache2
 
@@ -83,7 +83,7 @@ echo "##INF:[03/05] Installing MONO/Mod-mono"
 	apt-get update
 	apt-get -y install mono-runtime
 	apt-get -y install libapache2-mod-mono
-	apt-get -y install mono-apache-server2
+	#apt-get -y install mono-apache-server2
 
 	#Disable apache KeepAlive as recomended by mono-project for production use
 	find /etc/apache2/ -name apache2.conf -type f -exec sed -i s/"KeepAlive On"/"KeepAlive Off"/g {} \;
@@ -100,7 +100,7 @@ read appnameInput
 	wget https://raw.githubusercontent.com/edgarrc/MonoUbuntu/master/template-insert-sites.txt
 	wget https://raw.githubusercontent.com/edgarrc/MonoUbuntu/master/template-insert-webapp.txt
 
-	#Update tempalte variables	
+	#Update template variables	
 	find ./ -name template-insert-sites.txt -type f -exec sed -i s/"%APPNAME%"/"$appnameInput"/g {} \;
 	find ./ -name template-insert-webapp.txt -type f -exec sed -i s/"%APPNAME%"/"$appnameInput"/g {} \;
 	
@@ -134,8 +134,9 @@ askcs;
 		echo "ALL ALL=(ALL) NOPASSWD:ALL" >> "/etc/sudoers"
 	fi
  
-#----- STEP 5
+#----- STEP 6
 
+	#Get the ip address
 	IP=`ifconfig  | grep 'inet end.:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`;	
 	if [ "$IP" = "" ]; then IP="127.0.0.1"; fi
 
