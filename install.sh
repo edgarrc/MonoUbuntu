@@ -114,7 +114,7 @@ read appnameInput
 	sed -i '/<VirtualHost/r template-insert-sites.txt' /etc/apache2/sites-enabled/000-default.conf
 
 	#Apply to default.webapp	
-	sed -i '/<apps>/r template-insert-webapp.txt' /etc/mono-server4/default.webapp
+	sed -i '/<apps>/r template-insert-webapp.txt' /etc/mono-server4/debian.webapp
 	
 	#Remove templates
 	rm template-insert-sites.txt
@@ -157,7 +157,7 @@ askcs;
  
 	IP=`ifconfig  | grep 'inet end.:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`;	
 	if [ "$IP" = "" ]; then IP="127.0.0.1"; fi
-
+	
 echo ""
 echo "${AZUL}##INF: Installation completed!${NORM}"
 echo "${AZUL}##INF:${NORM}"
@@ -173,3 +173,4 @@ echo "${AZUL}##INF: ${AMARELO}/etc/init.d/apache2 restart ${NORM}"
 echo "${AZUL}##INF:${NORM}"
 echo ""
  
+rm install.sh
