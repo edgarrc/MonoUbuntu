@@ -2,8 +2,8 @@
 ######################################################
 # This script is provided as is, use at your own risk
 #
-# For more information about issues, make suggestions, changes
-# bugs etc, please refer to: https://github.com/edgarrc/MonoUbuntu
+# For more information about issues, suggestions, 
+# please refer to: https://github.com/edgarrc/MonoUbuntu
 #
 # You can download a Hello World application to test your installation from:
 #
