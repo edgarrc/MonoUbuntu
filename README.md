@@ -11,8 +11,6 @@ This script will ask for an application name and apache will be configured to ha
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbuntu/master/install.sh)$"
 ```
 
-The script will ask for an application name.
-
 ### Demonstration
 
 - This [Video](https://youtu.be/BYcYkIySFUk) shows this script being used
