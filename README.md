@@ -11,8 +11,8 @@ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbuntu/
 
 ### Demonstration
 
-- [Hello World test application] (https://github.com/edgarrc/MonoUbuntu/releases/download/hello/hello.zip)
-- [Video1](https://youtu.be/BYcYkIySFUk)
+- This [Video](https://youtu.be/BYcYkIySFUk) shows this script being used
+- If you want a simple application to test your installation, here you have a compiled [Hello World test application] (https://github.com/edgarrc/MonoUbuntu/releases/download/hello/hello.zip)
 
 ### Contributing
 
