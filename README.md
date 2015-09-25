@@ -1,7 +1,7 @@
 MonoUbuntu
 =========
 
-A simple script to install Mono / Apache-mod-mono (and other related stuff) on a Ubuntu server. Ready for production use, so you can run your ASP.NET application (or console/gui app as well) on Linux.
+A simple script to install Mono / Apache-mod-mono on a Ubuntu server. Ready for production use, so you can run your ASP.NET application (or console/gui app as well) on Linux.
 
 ### Usage
 
