@@ -3,11 +3,15 @@ MonoUbuntu
 
 A simple script to install Mono / Apache-mod-mono on a Ubuntu server. Ready for production use, so you can run your ASP.NET application (or console/gui app as well) on Linux.
 
+This script will ask for an application name and apache will be configured to handle this specific application as ASP.NET, so it will not interfere if you plan to use apache with php or anything else.
+
 ### Usage
 
 ```shell
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbuntu/master/install.sh)$"
 ```
+
+The script will ask for an application name.
 
 ### Demonstration
 
