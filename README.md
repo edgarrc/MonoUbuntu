@@ -16,7 +16,7 @@ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbuntu/
 
 ### Contributing
 
-Fell free to Fork and PR or create any request with issues tool
+- Fell free to create any request with issues tool
 
 ### Release History
 
