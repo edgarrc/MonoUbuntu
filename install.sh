@@ -84,7 +84,7 @@ echo "##INF:[02/03] Installing MONO/Mod-mono"
 echo ""
 echo "##INF:[03/03] Configuring ASP.NET application"
 
-	#Ask of application name
+	#Ask for application name
 	echo -n " Enter the name of your ASP.NET application : "
 	read appnameInput
 
