@@ -42,17 +42,11 @@ askcs ()  {
 
 #----- STEP 1
 
-echo ""
-echo "##INF:[01/03] Installing apache"
-
 	apt-get -y update
 	apt-get -y install wget
 	apt-get -y install apache2
 
 #----- STEP 2
-
-echo ""
-echo "##INF:[02/03] Installing MONO/Mod-mono"
 
 	#Add the last official repository
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
@@ -70,8 +64,6 @@ echo "##INF:[02/03] Installing MONO/Mod-mono"
 	/etc/init.d/apache2 restart
 
 #----- STEP 3
-echo ""
-echo "##INF:[03/03] Configuring ASP.NET application"
 
 	#Ask for application name
 	##echo -n " Enter the name of your ASP.NET application : "
