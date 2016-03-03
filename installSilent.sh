@@ -63,7 +63,7 @@
 	#Create directory for application
 	mkdir -p /var/www/html/$appnameInput
 	
-	chown -R www-data:www-data /var/www
+	chown -R www-data:www-data /var/www/html
 
 
 
