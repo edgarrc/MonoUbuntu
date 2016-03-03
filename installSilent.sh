@@ -12,34 +12,6 @@
 # Edgar
 ######################################################
 
-#Helper function to ask for confirmation
-askcs ()  {
-  echo  -n " - Yes or No? (y/n) :"
-  read resp
-
-  while [ "1" = "1" ]
-  do
-    if [ "$resp" = '' ];
-    then
-      resp="y"
-      break
-    else
-      case $resp in
-        y | Y ) 
-           resp="y";
-           break;;
-        n | N ) 
-		   resp="n";
-	       break;;
-        *)
-           echo -n 'Wrong answer, type again:';
-           read resp;
-	   continue;;
-       esac
-    fi
-  done
-}
-
 #----- STEP 1
 
 	apt-get -y update
