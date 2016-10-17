@@ -23,4 +23,5 @@ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbuntu/
 ### Release History
 
 1.0 - TEST OK 24 set 2015
+1.1 - TEST OK 17 out 2016 Ubuntu 16 LTS
 
