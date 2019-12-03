@@ -1,3 +1,10 @@
+### *Note*: Since the release of .Net core from Microsoft, this project is no longer mantained
+
+- https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/
+- https://github.com/dotnet/announcements/issues/130
+
+=========
+
 MonoUbuntu
 =========
 
