@@ -1,8 +1,3 @@
-### *Note*: Since the release of .Net core from Microsoft, this project is no longer mantained
-
-- https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/
-- https://github.com/dotnet/announcements/issues/130
-
 =========
 
 MonoUbuntu
@@ -29,6 +24,6 @@ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/edgarrc/MonoUbuntu/
 
 ### Release History
 
-- 1.0 - TEST OK 24 set 2015
-- 1.1 - TEST OK 17 out 2016 Ubuntu 16 LTS
+- 2021-03-01: Previous releases that uses Ubuntu 16 and lower versions are broken due to changes on apache and the release of mod mono.
+- 2021-03-01: Tested OK on Ubuntu 20.04 LTS 64bit
 
